@@ -158,7 +158,6 @@ WHERE p.dato > '1939-01-01' and p.dato < '1945-12-31' and m.overtittel = 'Anne F
 and whim.navn = 'fotograf';
 
 
-/*Får feil på group by fornavn, etternavn og artistnavn*/
 CREATE VIEW A(fornavn, etternavn, artistnavn, antallFilmer) as 
 	SELECT w.fornavn, w.etternavn, w.artistnavn, count(*)
 	FROM Worker w, Picture p, Scene s, Movie m, WorkerHasFunctionInMovie whim
@@ -168,7 +167,7 @@ CREATE VIEW A(fornavn, etternavn, artistnavn, antallFilmer) as
 
 SELECT fornavn, artistnavn, etternavn
 FROM A
-HAVING max(antallfilmer) = antallfilmer;
+HAVING max(antallfilmer);
 
 
 /*Testene fungerere, men må få frem resultatet ved å legge til flere insert setninger*/
