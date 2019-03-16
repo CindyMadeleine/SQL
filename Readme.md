@@ -1,3 +1,5 @@
+Disse kodene trenger noe vedlikehold. Les kommentar under
+
 Innleveringsoppgave 2:
 
 * Brukernavn og fødselsnummer må ha 1:1-skranker fordi de er unike. Slik det står nå betyr det at en student kan 
