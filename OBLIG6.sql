@@ -16,7 +16,7 @@ CREATE TABLE Offentlig_Etat(
 
 CREATE TABLE Firma(
        kundenummer	int primary key,
-       org_nummer 		int, 
+       org_nummer 		int UNIQUE NOT NULL, 
        unique(org_nummer),
        foreign key (kundenummer) references Kunde(kundenummer)
 );
@@ -51,7 +51,7 @@ CREATE TABLE Prosjekt(
 CREATE TABLE AnsattDeltarIProsjekt(
        ansattnr		int,
        prosjektnr 	int,
-       unique(ansattnr, prosjektnr),
+       PRIMARY KEY(ansattnr, prosjektnr),
        foreign key (ansattnr) references Ansatt(ansattnr),
        foreign key (prosjektnr) references Prosjekt(prosjektnummer)
 );
